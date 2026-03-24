@@ -2,7 +2,7 @@ export async function POST(request: Request) {
   const { query } = await request.json()
 
   const response = await fetch(
-    "https://api-inference.huggingface.co/pipeline/feature-extraction/sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
+    "https://router.huggingface.co/hf-inference/models/sentence-transformers/paraphrase-multilingual-mpnet-base-v2/pipeline/sentence-similarity",
     {
       method: "POST",
       headers: {
