@@ -18,7 +18,10 @@ export async function POST(request: Request) {
 
   // Step 2: Run vector similarity search with filters
   const { data, error } = await supabase.rpc("search_ayaat", {
-    query_embedding: embedding,
+    query_embedding: [
+      ...embedding,
+      ...Array(768 - embedding.length).fill(0.0)
+    ],
     filter_surah: filters.surah ?? null,
     filter_juz: filters.juz ?? null,
     filter_theme: filters.theme ?? null,
