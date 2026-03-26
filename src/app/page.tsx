@@ -6,7 +6,7 @@ import { FilterSidebar } from '@/components/FilterSidebar';
 import { ResultsList } from '@/components/ResultsList';
 import { TafsirPanel } from '@/components/TafsirPanel';
 import type { SearchRequestBody } from '@/types/search';
-import { Ayah } from '@/types/ayah'
+import type { Ayah } from '@/types/ayah';
 
 const API_URL = process.env.NEXT_PUBLIC_APP_URL || '';
 
@@ -92,7 +92,7 @@ export default function Home() {
     }
   }, [query, handleSearch]);
 
-  const handleAyahSelect = useCallback(async ( ayah: Ayah) => {
+  const handleAyahSelect = useCallback((ayah: Ayah): void => {
     setSelectedAyah(ayah);
   }, []);
 

@@ -1,15 +1,7 @@
 import { ResultCard } from './ResultCard';
 import { LoadingState } from './LoadingState';
 import { EmptyState } from './EmptyState';
-
-interface Ayah {
-  id: number;
-  arabic: string;
-  english: string;
-  surah: number;
-  ayah: number;
-  juz: number;
-}
+import { Ayah } from '@/types/ayah'
 
 interface ResultsListProps {
   results: Ayah[];
