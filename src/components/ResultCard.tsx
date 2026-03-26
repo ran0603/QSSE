@@ -50,7 +50,7 @@ export function ResultCard({ ayah, onClick, isSelected }: ResultCardProps) {
       {/* Metadata badges row */}
       <div className="flex flex-wrap items-center gap-2 text-xs md:text-sm text-gray-600">
         <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-gray-100 text-gray-800">
-          Al-Fatihah {ayah.surah}:{ayah.ayah}
+          {ayah.surah}:{ayah.ayah}
         </span>
         <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-gray-100 text-gray-800">
           Juz {ayah.juz}

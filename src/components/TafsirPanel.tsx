@@ -11,7 +11,9 @@ export function TafsirPanel({ tafsir, selectedAyah }: TafsirPanelProps) {
           <h3 className="text-lg font-bold text-gray-900 mb-4">
             Tafsir Ibn Kathir - Surah {selectedAyah.surah}: {selectedAyah.ayah}
           </h3>
-          {tafsir ?? (
+          {tafsir ? (
+            <div dangerouslySetInnerHTML={{ __html: tafsir }} />
+          ) : (
             <p className="text-gray-500 italic">Loading tafsir...</p>
           )}
         </>
