@@ -6,6 +6,7 @@ import { FilterSidebar } from '@/components/FilterSidebar';
 import { ResultsList } from '@/components/ResultsList';
 import { TafsirPanel } from '@/components/TafsirPanel';
 import type { SearchRequestBody } from '@/types/search';
+import type { SearchResult } from '@/types/search';
 import type { Ayah } from '@/types/ayah';
 
 const API_URL = process.env.NEXT_PUBLIC_APP_URL || '';
@@ -62,14 +63,14 @@ export default function Home() {
 
         // Adjust this mapping to match your API response shape
         setResults(
-          data.results.map((r: any) => ({
+          data.results.map((r: SearchResult) => ({
             id: r.id,
             arabic: r.arabic_text,
             english: r.translation_en,
             surah: r.surah_number,
             ayah: r.ayah_number,
             juz: r.juz_number,
-            similarity: r.similarity,
+            similarity: r.similarity_en > r.similarity_ar ? r.similarity_en : r.similarity_ar,
             themeTags: r.theme_tags,
             rootWords: r.root_words || [],
             tafsir: r.tafsir_excerpt
